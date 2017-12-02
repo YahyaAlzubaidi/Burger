@@ -1,7 +1,8 @@
 //Requied dependencies
+console.log('test')
 var express = require('express');
-var bodyParser = require('bodyParser');
-var methodOverride = require('methodOverride');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var port = process.env.PORT || 3000; 
 var app = express();
@@ -16,14 +17,14 @@ var app = express();
  //Set Handlebars as the view engin
  var exphbs = require('express-handlebars');
 
- app.engin('handlebars', exphbs({ defaultLayout: 'main' }));
- app.set('view engin', 'handlebars');
+ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+ app.set('view engine', 'handlebars');
 
 
 
  //Import routes and give the server access to them 
 
- var routes = require('./controller/burgers_controller.js');
+ var routes = require('./controllers /burgerController.js');
  app.use('/', routes);
 
  app.listen(port);
